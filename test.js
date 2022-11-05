@@ -15,3 +15,10 @@ describe('Endpoint Test', () => {
     expect(res.statusCode).toBe(200)
   })
 })
+
+describe('Get name', () => {
+  it('should test Name === Badges', async () => {
+    const res = await request(url).get('/')
+    expect(res.body.Name).toBe('Badges')
+  })
+})
