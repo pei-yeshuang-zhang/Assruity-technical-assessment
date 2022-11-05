@@ -30,9 +30,17 @@ describe('Get CanRelist', () => {
   })
 })
 
-// describe('Get Promotions', () => {
-//   it('should test the Promotions element with Name = "Feature" has a Description that contains the text "Better position in category"', async () => {
-//     const res = await request(url).get('/')
-//     expect(res.body.Promotions.).toBeTruthy()
-//   })
-// })
+describe('Get Promotions', () => {
+  it('should test the Promotions element with Name = "Feature" has a Description that contains the text "Better position in category"', async () => {
+    const res = await request(url).get('/')
+    const promotions = await res.body.Promotions
+    expect(promotions).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          Name: 'Feature',
+          Description: expect.stringContaining('Better position in category'),
+        }),
+      ])
+    )
+  })
+})
