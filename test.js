@@ -17,7 +17,7 @@ describe('Endpoint Test', () => {
 })
 
 describe('Get name', () => {
-  it('should test Name === Badges', async () => {
+  it('should test Name === "Badges"', async () => {
     const res = await request(url).get('/')
     expect(res.body.Name).toBe('Badges')
   })
@@ -26,6 +26,13 @@ describe('Get name', () => {
 describe('Get CanRelist', () => {
   it('should test CanRelist === true', async () => {
     const res = await request(url).get('/')
-    expect(res.body.CanRelist).toBeTruthy()
+    expect(res.body.CanRelist).toBe(true)
   })
 })
+
+// describe('Get Promotions', () => {
+//   it('should test the Promotions element with Name = "Feature" has a Description that contains the text "Better position in category"', async () => {
+//     const res = await request(url).get('/')
+//     expect(res.body.Promotions.).toBeTruthy()
+//   })
+// })
