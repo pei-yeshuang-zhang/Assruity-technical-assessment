@@ -22,3 +22,10 @@ describe('Get name', () => {
     expect(res.body.Name).toBe('Badges')
   })
 })
+
+describe('Get CanRelist', () => {
+  it('should test CanRelist === true', async () => {
+    const res = await request(url).get('/')
+    expect(res.body.CanRelist).toBeTruthy()
+  })
+})
