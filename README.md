@@ -10,7 +10,9 @@ Language: JavaScript
 To install dependencies 
 
 ```bash
-npm install
+$ git clone https://github.com/pei-yeshuang-zhang/Assurity-technical-assessment.git
+$ cd Assruity-technical-assessment
+$ npm install
 ```
 
 ## Usage
@@ -18,5 +20,5 @@ npm install
 To run tests 
 
 ```bash
-npm test
+$ npm test
 ```
